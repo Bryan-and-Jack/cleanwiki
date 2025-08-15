@@ -21,3 +21,16 @@
   width: 15rem;
   z-index: -1;
 }
+
+.home-body {
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+}
+
+.home-body__small-tile {
+  background-color: rgb(211, 211, 211);
+  border-radius: 6px;
+  text-align: center;
+}

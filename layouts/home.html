@@ -4,6 +4,15 @@
     <h3>This site is my site, there are many like it, but this one is mine.</h3>
   </span>
   {{ .Content }}
+  <section class="home-body">
+    {{ range $name, $pages := site.Taxonomies.categories }}
+      <article class="home-body__small-tile">
+        <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}"
+          >{{ $name }}</a
+        >
+      </article>
+    {{ end }}
+  </section>
   {{ range site.RegularPages }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
     {{ .Summary }}
