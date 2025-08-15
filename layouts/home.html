@@ -1,4 +1,8 @@
 {{ define "main" }}
+  <span class="home-header">
+    <h1 class="home-header__title">{{ site.Title }}</h1>
+    <h3>This site is my site, there are many like it, but this one is mine.</h3>
+  </span>
   {{ .Content }}
   {{ range site.RegularPages }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
