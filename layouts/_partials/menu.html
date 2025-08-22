@@ -11,8 +11,8 @@
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav>
-    <ul>
+  <nav class="side-bar">
+    <ul class="side-bar__list">
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>
   </nav>
@@ -33,7 +33,7 @@
         {{- $name = . }}
       {{- end }}
     {{- end }}
-    <li>
+    <li class="side-bar__item">
       <a
         {{- range $k, $v :=$attrs }}
           {{- with $v }}{{- printf " %s=%q" $k $v | safeHTMLAttr }}{{- end }}

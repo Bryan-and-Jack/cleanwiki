@@ -1,0 +1,14 @@
+.side-bar__list {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+
+  @include for-screen(tablet) {
+    flex-direction: column;
+  }
+}
+
+.side-bar__item {
+  list-style: none;
+  margin: 10px;
+}

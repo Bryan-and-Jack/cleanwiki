@@ -1,0 +1,16 @@
+<div id="search"></div>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const ui = new PagefindUI({
+      element: '#search',
+      showSubResults: true,
+    });
+
+    const input = document.querySelector('#search input');
+    if (input) {
+      input.addEventListener('input', () => {
+        ui.triggerSearch(input.value);
+      });
+    }
+  });
+</script>

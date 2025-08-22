@@ -3,6 +3,7 @@
     <h1 class="home-header__title">{{ site.Title }}</h1>
     <h3>This site is my site, there are many like it, but this one is mine.</h3>
   </span>
+  {{ partial "search-bar.html" . }}
   <section class="home-small-tile">
     {{ range $name, $pages := site.Taxonomies.categories }}
       <article class="home-small-tile__item">
