@@ -1,11 +1,28 @@
 .layout {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  @include for-screen(tablet) {
+    flex-direction: row;
+  }
 }
 
-.layout__content {
+.layout__side-bar {
+  background-color: rgb(255, 212, 212);
+
+  @include for-screen(mobile) {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+  }
+
+  @include for-screen(tablet) {
+    position: relative;
+  }
+}
+
+.layout__main-content {
   display: flex;
   flex-direction: column;
   padding: 0 10%;
-  width: 100%;
 }

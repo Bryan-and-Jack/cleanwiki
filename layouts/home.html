@@ -3,16 +3,23 @@
     <h1 class="home-header__title">{{ site.Title }}</h1>
     <h3>This site is my site, there are many like it, but this one is mine.</h3>
   </span>
-  {{ .Content }}
-  <section class="home-body">
+  <section class="home-small-tile">
     {{ range $name, $pages := site.Taxonomies.categories }}
-      <article class="home-body__small-tile">
+      <article class="home-small-tile__item">
         <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}"
           >{{ $name }}</a
         >
       </article>
     {{ end }}
   </section>
+  <h3>Featured</h3>
+  <section class="home-big-tile">
+    <article class="home-big-tile__item">hgfhgf</article>
+    <article class="home-big-tile__item">fhghfgfg</article>
+    <article class="home-big-tile__item">hfg</article>
+  </section>
+  <h3>About us</h3>
+  {{ .Content }}
   {{ range site.RegularPages }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
     {{ .Summary }}

@@ -8,10 +8,10 @@
 
   <body>
     <div class="layout">
-      <aside>
+      <aside class="layout__side-bar">
         {{ partial "aside.html" . }}
       </aside>
-      <section class="layout__content">
+      <section class="layout__main-content">
         <main>
           {{ block "main" . }}{{ end }}
         </main>
