@@ -4,15 +4,7 @@
     <h3>This site is my site, there are many like it, but this one is mine.</h3>
   </span>
   {{ partial "search-bar.html" . }}
-  <section class="home-small-tile">
-    {{ range $name, $pages := site.Taxonomies.categories }}
-      <article class="home-small-tile__item">
-        <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}"
-          >{{ $name }}</a
-        >
-      </article>
-    {{ end }}
-  </section>
+  {{ partial "small-tiles.html" . }}
   <h3>Featured</h3>
   {{ partial "big-tiles.html" . }}
   <h3>About us</h3>
