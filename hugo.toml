@@ -36,6 +36,10 @@ iconsHaveLabels = true
 # Seperate the first icon with a line break
 seperatorForFirstIcon = true
 
+[params.smallTiles]
+# Type of content to appear in small tiles
+type = "categories"  # "categories" or "tags"
+
 [params.bigTiles]
 # Number of tiles to show
 count = 3
