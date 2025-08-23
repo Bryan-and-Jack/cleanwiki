@@ -14,11 +14,7 @@
     {{ end }}
   </section>
   <h3>Featured</h3>
-  <section class="home-big-tile">
-    <article class="home-big-tile__item">hgfhgf</article>
-    <article class="home-big-tile__item">fhghfgfg</article>
-    <article class="home-big-tile__item">hfg</article>
-  </section>
+  {{ partial "big-tiles.html" . }}
   <h3>About us</h3>
   {{ .Content }}
   {{ range site.RegularPages }}

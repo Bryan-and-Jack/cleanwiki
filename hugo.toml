@@ -27,11 +27,18 @@ title = 'My New Hugo Site'
     min = '0.146.0'
 
 [params]
-# Override custom CSS with default PageFind search styles.
+# Override custom CSS with default PageFind search styles
 enablePagefindCSS = true 
 
 [params.navigationBar]
-# Show both icons and text.
+# Show both icons and text
 iconsHaveLabels = true
-# Seperate the first icon with a line break.
+# Seperate the first icon with a line break
 seperatorForFirstIcon = true
+
+[params.bigTiles]
+# Number of tiles to show
+count = 3
+# Max characters for excerpt.
+truncate = 150
+

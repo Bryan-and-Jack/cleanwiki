@@ -1,6 +1,11 @@
 @import 'screen.scss';
-@import 'side-bar.scss';
 @import 'content.scss';
 @import 'layout.scss';
-@import 'home.scss';
+
+// Partials
 @import 'search-bar.scss';
+@import '_big-tile.scss';
+@import 'side-bar.scss';
+
+// Pages
+@import 'home.scss';
