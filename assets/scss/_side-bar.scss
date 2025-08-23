@@ -3,12 +3,46 @@
   flex-direction: row;
   padding: 0;
 
+  @include for-screen(mobile) {
+    margin: 10 0 0 0;
+  }
+
   @include for-screen(tablet) {
     flex-direction: column;
+    margin: 0;
   }
 }
 
 .side-bar__item {
   list-style: none;
-  margin: 10px;
+
+  @include for-screen(mobile) {
+    margin: 0 0 0 15px;
+  }
+
+  @include for-screen(tablet) {
+    margin: 10px;
+  }
+}
+
+.side-bar__item-icon {
+  width: 30px;
+
+  @include for-screen(mobile) {
+    padding: 0 10px 0 0;
+  }
+}
+
+.side-bar__item-icon--first {
+  @include for-screen(mobile) {
+    border-right: 1px solid black;
+    margin: 0 20px 0 0;
+  }
+  @include for-screen(tablet) {
+    border-bottom: 1px solid black;
+    margin: 0 0 20px 0;
+  }
+}
+
+.side-bar__item-label {
 }

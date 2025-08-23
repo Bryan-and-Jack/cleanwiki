@@ -5,16 +5,19 @@ title = 'My New Hugo Site'
 [menus]
   [[menus.main]]
     name = 'Home'
+    pre = 'house'
     pageRef = '/'
     weight = 10
 
   [[menus.main]]
     name = 'Posts'
+    pre = 'newspaper'
     pageRef = '/posts'
     weight = 20
 
   [[menus.main]]
     name = 'Tags'
+    pre = 'tag'
     pageRef = '/tags'
     weight = 30
 
@@ -22,3 +25,13 @@ title = 'My New Hugo Site'
   [module.hugoVersion]
     extended = false
     min = '0.146.0'
+
+[params]
+# Override custom CSS with default PageFind search styles.
+enablePagefindCSS = true 
+
+[params.navigationBar]
+# Show both icons and text.
+iconsHaveLabels = true
+# Seperate the first icon with a line break.
+seperatorForFirstIcon = true
