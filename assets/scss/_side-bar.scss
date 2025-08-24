@@ -1,10 +1,14 @@
+.side-bar {
+  position: relative;
+}
+
 .side-bar__list {
   display: flex;
   flex-direction: row;
   padding: 0;
 
   @include for-screen(mobile) {
-    margin: 10 0 0 0;
+    margin: 5px 5px 5px 0;
   }
 
   @include for-screen(tablet) {
@@ -17,32 +21,53 @@
   list-style: none;
 
   @include for-screen(mobile) {
-    margin: 0 0 0 15px;
+    margin: 5px 0 0 5px;
   }
 
   @include for-screen(tablet) {
-    margin: 10px;
+    margin-bottom: $sidebar-icon-gap;
   }
 }
 
 .side-bar__item-icon {
-  width: 30px;
-
-  @include for-screen(mobile) {
-    padding: 0 10px 0 0;
-  }
+  margin: 0;
+  padding: 2px;
+  width: $sidebar-icon-size;
 }
 
-.side-bar__item-icon--first {
+.side-bar__item-icon--separator {
+}
+
+.side-bar__separator {
+  border-right: 1px solid black;
+  margin: 0;
+
   @include for-screen(mobile) {
-    border-right: 1px solid black;
-    margin: 0 20px 0 0;
+    margin-left: $sidebar-icon-gap;
+    margin-right: $sidebar-icon-gap;
+    padding-right: 5px;
   }
   @include for-screen(tablet) {
     border-bottom: 1px solid black;
-    margin: 0 0 20px 0;
+    margin-bottom: $sidebar-icon-gap;
+    width: 100%;
   }
 }
 
 .side-bar__item-label {
+  font-size: 14px;
+}
+
+.side-bar__item-button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: black;
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+.side-bar__item-button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }

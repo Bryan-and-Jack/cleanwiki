@@ -7,19 +7,27 @@ title = 'My New Hugo Site'
     name = 'Home'
     pre = 'house'
     pageRef = '/'
-    weight = 10
+    weight = 10 
+    [[menus.main.params]]
+      separator = true
 
   [[menus.main]]
     name = 'Posts'
     pre = 'newspaper'
     pageRef = '/posts'
     weight = 20
+    [[menus.main.params]]
+      popover = true
+      popoverContentPartial = "popovers/search.html"
 
   [[menus.main]]
     name = 'Tags'
     pre = 'tag'
     pageRef = '/tags'
     weight = 30
+      [[menus.main.params]]
+      popover = true
+      popoverContentPartial = "popovers/posts.html"
 
 [module]
   [module.hugoVersion]
@@ -30,11 +38,15 @@ title = 'My New Hugo Site'
 # Override custom CSS with default PageFind search styles
 enablePagefindCSS = true 
 
-[params.navigationBar]
+[params.navigationBar]  
 # Show both icons and text
-iconsHaveLabels = true
+iconsHaveLabels = false
 # Seperate the first icon with a line break
-seperatorForFirstIcon = true
+iconSeparator = true
+
+[params.smallTiles]
+# Type of content to appear in small tiles
+type = "categories"  # "categories" or "tags"
 
 [params.smallTiles]
 # Type of content to appear in small tiles

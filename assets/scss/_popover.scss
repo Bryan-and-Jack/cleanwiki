@@ -1,0 +1,74 @@
+.popover-posts {
+  background-color: green;
+
+  @include for-screen(mobile) {
+    bottom: 60%;
+    left: 0;
+    width: 90%;
+  }
+
+  @include for-screen(tablet) {
+    inset: auto;
+    top: 0;
+    transform: translateX(45px + $sidebar-icon-size + $sidebar-popover-gap);
+  }
+}
+
+.popover-tags {
+  background-color: red;
+  @include for-screen(mobile) {
+    left: 0;
+    top: 0;
+    width: 90%;
+  }
+
+  @include for-screen(tablet) {
+    inset: auto;
+    top: 0;
+    transform: translateX(45px + $sidebar-icon-size + $sidebar-popover-gap);
+  }
+}
+
+.nav-header {
+  align-items: center;
+  background: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  padding: 1rem;
+}
+
+.nav-header__icon {
+  background: #999;
+  height: 32px;
+  margin-right: 1rem;
+  width: 32px;
+}
+
+.nav-main {
+  display: grid;
+  flex: 1;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem;
+}
+
+.nav-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  background: #e0e0e0;
+  border-radius: 4px;
+  color: #000;
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+.nav-footer {
+  background: #f0f0f0;
+  border-top: 1px solid #ccc;
+  padding: 1rem;
+  text-align: center;
+}
