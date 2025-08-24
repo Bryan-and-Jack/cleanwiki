@@ -1,13 +1,32 @@
 .popover-home {
   background-color: green;
-}
 
-.popover-home:popover-open {
-  background-color: rgb(0, 255, 0);
+  @include for-screen(mobile) {
+    bottom: 60%;
+    left: 0;
+    width: 90%;
+  }
+
+  @include for-screen(tablet) {
+    inset: auto;
+    top: 0;
+    transform: translateX(75px);
+  }
 }
 
 .popover-posts {
   background-color: red;
+  @include for-screen(mobile) {
+    left: 0;
+    top: 0;
+    width: 90%;
+  }
+
+  @include for-screen(tablet) {
+    inset: auto;
+    top: 0;
+    transform: translateX(75px);
+  }
 }
 
 .nav-header {
