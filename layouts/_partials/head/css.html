@@ -1,18 +1,6 @@
-{{ if .Site.Params.enablePagefindCSS }}
+{{- if .Site.Params.enablePagefindCSS }}
   <link rel="stylesheet" href="/_pagefind/pagefind-ui.css" />
-{{ end }}
-{{- with resources.Get "css/main.css" }}
-  {{- if hugo.IsDevelopment }}
-    <link rel="stylesheet" href="{{ .RelPermalink }}" />
-  {{- else }}
-    {{- with . | minify | fingerprint }}
-      <link
-        rel="stylesheet"
-        href="{{ .RelPermalink }}"
-        integrity="{{ .Data.Integrity }}"
-        crossorigin="anonymous" />
-    {{- end }}
-  {{- end }}
 {{- end }}
-{{ $styles := resources.Get "scss/main.scss" | toCSS }}
-<link rel="stylesheet" href="{{ $styles.Permalink }}" />
+
+{{- $styles := resources.Get "scss/main.scss" | toCSS }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
