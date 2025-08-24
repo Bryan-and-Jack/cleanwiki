@@ -48,11 +48,7 @@ iconSeparator = true
 # Type of content to appear in small tiles
 type = "categories"  # "categories" or "tags"
 
-[params.smallTiles]
-# Type of content to appear in small tiles
-type = "categories"  # "categories" or "tags"
-
-[params.bigTiles]
+[params.bigTiles] 
 # Number of tiles to show
 count = 3
 # Max characters for excerpt.
