@@ -30,7 +30,7 @@
 }
 
 .side-bar__item-icon {
-  width: 30px;
+  width: $sidebar-icon-size;
 
   @include for-screen(mobile) {
     padding: 0 10px 0 0;
