@@ -1,4 +1,4 @@
-.popover-home {
+.popover-posts {
   background-color: green;
 
   @include for-screen(mobile) {
@@ -14,7 +14,7 @@
   }
 }
 
-.popover-posts {
+.popover-tags {
   background-color: red;
   @include for-screen(mobile) {
     left: 0;
