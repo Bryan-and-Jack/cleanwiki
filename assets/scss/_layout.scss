@@ -9,16 +9,18 @@
 
 .layout__side-bar {
   background-color: rgb(255, 212, 212);
+  position: fixed; // Offsets entire main page; FIX!
 
   @include for-screen(mobile) {
     bottom: 0;
-    position: fixed;
     width: 100%;
   }
 
   @include for-screen(tablet) {
+    display: flex;
+    height: 100vw;
+    justify-content: center;
     padding: 36px 8px 8px 8px;
-    position: relative;
   }
 }
 

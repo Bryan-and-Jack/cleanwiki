@@ -1,3 +1,4 @@
+@import 'variables.scss';
 @import 'screen.scss';
 @import 'content.scss';
 @import 'layout.scss';
@@ -7,6 +8,7 @@
 @import 'small-tile.scss';
 @import 'big-tile.scss';
 @import 'side-bar.scss';
+@import 'popover.scss';
 
 // Pages
 @import 'home.scss';

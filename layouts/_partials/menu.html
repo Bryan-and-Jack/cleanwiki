@@ -7,11 +7,16 @@
   @example: {{ partial "menu.html" (dict "menuID" "main" "page" .)
 }}
 */}}
+{{- /*
+  - Concern: seperate responsabilites.
+  - Custom items in the main navbar which acts as popovers.
+*/}}
 {{- $page := .page }}
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
   <nav class="side-bar">
+    {{- partial "popover.html" -}}
     <ul class="side-bar__list">
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>
@@ -35,26 +40,44 @@
 
 
     <li class="side-bar__item">
-      <a
-        {{- range $k, $v := $attrs }}
-          {{- with $v }}{{ printf " %s=%q" $k $v | safeHTMLAttr }}{{- end }}
-        {{- end -}}>
-        {{- if $e.Pre }}
-          <div
-            class="side-bar__item-icon{{ if $isFirst }}
-              side-bar__item-icon--first
-            {{ end }}"
-            title="Visit {{ $e.Name }}">
-            {{ partial (printf "icons/%s.html" $e.Pre) $e }}
-            {{- if $iconsHaveLabels }}
-              <span class="side-bar__item-label">{{ $e.Name }}</span>
-            {{- end -}}
-          </div>
-        {{- else }}
-          <span class="side-bar__item-label">{{ $e.Name }}</span>
-        {{- end -}}
-      </a>
-
+      {{- if $e.Params.popover -}}
+        <button class="side-bar__item-button" popovertarget="{{ $e.Name }}">
+          {{- if $e.Pre }}
+            <div
+              class="side-bar__item-icon{{ if $isFirst }}
+                side-bar__item-icon--first
+              {{ end }}"
+              title="Visit {{ $e.Name }}">
+              {{ partial (printf "icons/%s.html" $e.Pre) $e }}
+              {{- if $iconsHaveLabels }}
+                <span class="side-bar__item-label">{{ $e.Name }}</span>
+              {{- end -}}
+            </div>
+          {{- else }}
+            <span class="side-bar__item-label">{{ $e.Name }}</span>
+          {{- end -}}
+        </button>
+      {{- else -}}
+        <a
+          {{- range $k, $v := $attrs }}
+            {{- with $v }}{{ printf " %s=%q" $k $v | safeHTMLAttr }}{{- end }}
+          {{- end -}}>
+          {{- if $e.Pre }}
+            <div
+              class="side-bar__item-icon{{ if $isFirst }}
+                side-bar__item-icon--first
+              {{ end }}"
+              title="Visit {{ $e.Name }}">
+              {{ partial (printf "icons/%s.html" $e.Pre) $e }}
+              {{- if $iconsHaveLabels }}
+                <span class="side-bar__item-label">{{ $e.Name }}</span>
+              {{- end -}}
+            </div>
+          {{- else }}
+            <span class="side-bar__item-label">{{ $e.Name }}</span>
+          {{- end -}}
+        </a>
+      {{- end -}}
       {{- with $e.Children }}
         <ul>
           {{- partial "inline/menu/walk.html" (dict "page" $.page "menuEntries" .) }}

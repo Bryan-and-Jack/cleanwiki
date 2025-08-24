@@ -8,12 +8,18 @@ title = 'My New Hugo Site'
     pre = 'house'
     pageRef = '/'
     weight = 10
+    [[menus.main.params]]
+      popover = true
+      popoverContentPartial = "popovers/search.html"
 
   [[menus.main]]
     name = 'Posts'
     pre = 'newspaper'
     pageRef = '/posts'
     weight = 20
+    [[menus.main.params]]
+      popover = true
+      popoverContentPartial = "popovers/posts.html"
 
   [[menus.main]]
     name = 'Tags'
